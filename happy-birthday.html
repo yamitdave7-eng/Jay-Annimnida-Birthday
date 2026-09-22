@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy 18th Birthday, Jay Ann!</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #14121a,
+                #3a1f4d,
+                #c9a6f0,
+                #f7b6d2
+            );
+
+            color: white;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 520px;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            border: none;
+            padding: 13px 24px;
+            border-radius: 25px;
+
+            background: #f7b6d2;
+            color: #2a1a33;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        button:active {
+            transform: scale(0.97);
+        }
+
+        .gift {
+            font-size: 80px;
+            margin-bottom: 15px;
+        }
+
+        .waiting-text {
+            font-size: 20px;
+        }
+
+        .letter-card {
+            background: #fff0f7;
+            color: #2a1a33;
+
+            padding: 25px;
+            border-radius: 20px;
+
+            text-align: left;
+            line-height: 1.6;
+
+            max-height: 60vh;
+            overflow-y: auto;
+
+            margin-bottom: 20px;
+        }
+
+        .letter-card p {
+            margin-bottom: 15px;
+        }
+
+        .verse {
+            padding: 12px;
+            border-left: 4px solid #d162a4;
+
+            background: #f7d9e8;
+
+            border-radius: 6px;
+            font-style: italic;
+        }
+
+        .countdown {
+            font-size: 80px;
+            font-weight: bold;
+            color: #f7b6d2;
+        }
+
+        .loading-text {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .progress {
+            width: 100%;
+            max-width: 300px;
+            height: 15px;
+
+            margin: 20px auto;
+
+            background: rgba(255, 255, 255, 0.4);
+
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+
+            background: #f7b6d2;
+
+            transition: width 1.8s ease;
+        }
+
+        .card {
+            background: #fff0f7;
+            color: #2a1a33;
+
+            padding: 20px;
+            border-radius: 20px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+            margin-bottom: 20px;
+        }
+
+        .card img {
+            display: block;
+
+            width: 100%;
+            max-width: 100%;
+
+            height: auto;
+
+            border-radius: 15px;
+
+            margin: 0 auto 15px;
+        }
+
+        .card p {
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+        .small-text {
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        .credits {
+            margin-top: 25px;
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        /* Manual slide button */
+        .next-button {
+            margin-top: 10px;
+        }
+
+        @media (max-width: 480px) {
+
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .letter-card {
+                padding: 20px;
+                font-size: 15px;
+            }
+
+            .gift {
+                font-size: 65px;
+            }
+
+            .countdown {
+                font-size: 70px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- START -->
+    <div id="start">
+
+        <h1>Happy Birthday, Jay Ann!</h1>
+
+        <p class="subtitle">
+            Naa koy something para sa imo.
+        </p>
+
+        <button onclick="receiveGift()">
+            Click Here to Receive
+        </button>
+
+        <p class="credits">
+            Made by Deb
+        </p>
+
+    </div>
+
+
+    <!-- WAITING -->
+    <div id="waiting" class="hidden">
+
+        <div class="gift">
+            🎁
+        </div>
+
+        <p id="waitingText" class="waiting-text">
+            Here's your gift, wait lang...
+        </p>
+
+    </div>
+
+
+    <!-- LETTER -->
+    <div id="letter" class="hidden">
+
+        <h1>My Message For You</h1>
+
+        <div class="letter-card">
+
+            <p>
+                Happy 18th Birthday, Jay Ann!
+                Welcome to adulthood HAHAHA. New chapter na gyud ni.
+            </p>
+
+            <p>
+                Honestly, I wasn't even planning to make something like this
+                at first. But I thought, why not? It's been around a year
+                since we met, and although I'm still relatively new compared
+                to you guys who have known each other longer, I really want
+                to get to know everyone more.
+            </p>
+
+            <p>
+                You guys already have your own memories, stories, and
+                experiences together, and I'm grateful that somehow, I got
+                the chance to be part of that circle too. Hopefully, as time
+                goes on, dili lang ta mag-abot sa church or youth activities,
+                but we actually get to grow, serve, and walk with each other
+                through the years.
+            </p>
+
+            <p>
+                And since you're officially entering adulthood, daghan na
+                gyud responsibilities coming your way. HAHAHA. But seriously,
+                I'm praying that God continues to guide you in this new season.
+                May He bless you not only today, but throughout the years
+                ahead, and give you wisdom for every decision and direction
+                He leads you into.
+            </p>
+
+            <p>
+                In this new season, always remember the promise of
+                Deuteronomy 31:6:
+            </p>
+
+            <p class="verse">
+                "Be strong and courageous. Do not be afraid or terrified
+                because of them, for the Lord your God goes with you;
+                he will never leave you nor forsake you."
+            </p>
+
+            <p>
+                My biggest prayer for you is that as you grow older, you also
+                grow deeper in your relationship with Christ. I pray that you
+                continue to know Him, trust Him, and allow Him to lead your life.
+            </p>
+
+            <p>
+                Wishing you all the best, Jay Ann. Enjoy your day, enjoy
+                adulthood, and ayaw kaayo ka-stress sa life HAHAHA.
+                And of course, know that we're always here if you need
+                something—ayaw lang gyud kwarta. HAHAHAHA.
+            </p>
+
+            <p>
+                I'm excited to see what God has in store for you.
+                God bless always!
+            </p>
+
+        </div>
+
+        <button onclick="claimGift()">
+            Click Here Para Ma-Claim ang Gift
+        </button>
+
+    </div>
+
+
+    <!-- COUNTDOWN -->
+    <div id="countdownStage" class="hidden">
+
+        <div class="gift">
+            🎁
+        </div>
+
+        <div id="countdown" class="countdown">
+            3
+        </div>
+
+    </div>
+
+
+    <!-- LOADING -->
+    <div id="loading" class="hidden">
+
+        <p class="loading-text">
+            Wait lang, ge-unwrap pa imong gift...
+        </p>
+
+        <div class="progress">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
+
+    </div>
+
+
+    <!-- FAKEOUT / MEME SLIDE -->
+    <div id="fakeout" class="hidden">
+
+        <div class="card">
+
+            <img
+                src="meme.jpg"
+                alt="Birthday surprise"
+            >
+
+            <p>
+                POV: naghulat ka sa imong gift...
+                tas mao ni imong nakuha?!
+            </p>
+
+            <p>
+                The audacity?? Dejwk lang Jay Ann.
+                Wait lang gamay, naa pa gyud sunod
+                na mas legit...
+            </p>
+
+        </div>
+
+        <!-- SHE CONTROLS WHEN TO CONTINUE -->
+        <button
+            class="next-button"
+            onclick="showReveal()"
+        >
+            Okay okay, next →
+        </button>
+
+    </div>
+
+
+    <!-- REAL GIFT -->
+    <div id="reveal" class="hidden">
+
+        <div class="card">
+
+            <img
+                src="gift-photo.jpg"
+                alt="Matcha cookies"
+            >
+
+            <p>
+                Matcha cookies, diay to sheesh!
+            </p>
+
+        </div>
+
+        <button onclick="restart()">
+            Try Again Lods
+        </button>
+
+        <p class="credits">
+            Made by Deb
+        </p>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    function hideAll() {
+
+        document.getElementById("start").classList.add("hidden");
+        document.getElementById("waiting").classList.add("hidden");
+        document.getElementById("letter").classList.add("hidden");
+        document.getElementById("countdownStage").classList.add("hidden");
+        document.getElementById("loading").classList.add("hidden");
+        document.getElementById("fakeout").classList.add("hidden");
+        document.getElementById("reveal").classList.add("hidden");
+
+    }
+
+
+    function receiveGift() {
+
+        hideAll();
+
+        document.getElementById("waiting").classList.remove("hidden");
+
+        setTimeout(function() {
+
+            document.getElementById("waitingText").textContent =
+                "Pero wait lang... may message ko para sa imo.";
+
+        }, 1500);
+
+
+        setTimeout(function() {
+
+            hideAll();
+
+            document.getElementById("letter").classList.remove("hidden");
+
+        }, 3500);
+
+    }
+
+
+    function claimGift() {
+
+        hideAll();
+
+        document
+            .getElementById("countdownStage")
+            .classList.remove("hidden");
+
+
+        let number = 3;
+
+        document.getElementById("countdown").textContent = number;
+
+
+        let timer = setInterval(function() {
+
+            number--;
+
+            if (number > 0) {
+
+                document.getElementById("countdown").textContent = number;
+
+            } else {
+
+                clearInterval(timer);
+
+                startLoading();
+
+            }
+
+        }, 800);
+
+    }
+
+
+    function startLoading() {
+
+        hideAll();
+
+        document
+            .getElementById("loading")
+            .classList.remove("hidden");
+
+
+        let bar = document.getElementById("progressBar");
+
+        bar.style.width = "0%";
+
+
+        setTimeout(function() {
+
+            bar.style.width = "100%";
+
+        }, 100);
+
+
+        setTimeout(function() {
+
+            showFakeout();
+
+        }, 2000);
+
+    }
+
+
+    function showFakeout() {
+
+        hideAll();
+
+        document
+            .getElementById("fakeout")
+            .classList.remove("hidden");
+
+        /*
+         * No automatic timer anymore.
+         *
+         * Jay Ann has to press the button
+         * herself to reveal the real gift.
+         */
+
+    }
+
+
+    function showReveal() {
+
+        hideAll();
+
+        document
+            .getElementById("reveal")
+            .classList.remove("hidden");
+
+    }
+
+
+    function restart() {
+
+        hideAll();
+
+        document
+            .getElementById("start")
+            .classList.remove("hidden");
+
+    }
+
+</script>
+
+</body>
+</html>
